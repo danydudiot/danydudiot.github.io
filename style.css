@@ -1,9 +1,45 @@
-html {
-    background-color: black;
-    color: white;
+:root{
+    --mono-font: 'Space Mono', monospace;
 }
 
-.nom_page {
+body {
+    background-color: black;
+    color: white;
+    font-family: var(--mono-font);
+    max-width: min(round(nearest, 140ch, 5px), 90dvw);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: rgb(85, 161, 255);
+    text-decoration: underline dashed;
+}
+
+.nom_page_a{
     color: white;
     text-decoration: none;
+}
+
+.nom_page_h1, .projet_h2 {
+    margin-bottom: 0.2em;
+}
+
+header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo_github {
+    width: 1em; /* La largeur de l'image sera 2 fois la taille de la police */
+    height: auto; /* Maintient le ratio de l'image */
+    margin-right: 0.2em;
+}
+
+.github {
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
 }
