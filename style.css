@@ -6,7 +6,7 @@ body {
     background-color: black;
     color: white;
     font-family: var(--mono-font);
-    max-width: min(round(nearest, 140ch, 5px), 90dvw);
+    max-width: min(round(nearest, 120ch, 5px), 90dvw);
     margin-left: auto;
     margin-right: auto;
 }
@@ -16,16 +16,22 @@ a {
     text-decoration: underline dashed;
 }
 
-.nom_page_a{
+a:hover {
+    text-decoration: underline;
+}
+
+.nom_page_a, .lien_page{
     color: white;
     text-decoration: none;
 }
+
+.lien_page::before {content: "🔗";}
 
 .nom_page_h1, .projet_h2 {
     margin-bottom: 0.2em;
 }
 
-header {
+header, title {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
