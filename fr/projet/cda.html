@@ -7,13 +7,69 @@
     <title>Dany Dudiot - CDA</title>
 </head>
 <body>
-    <a href="/fr/index.html" class="nom_page">
+    <a href="/fr/index.html" class="nom_page_a">
         <h1>Dany Dudiot</h1>
     </a>
     <main>
-        <h2>CDA</h2>
+        <h2>CDA (Conception et développement d'une application)</h2>
         <a href="https://github.com/danydudiot/CDA">Dépôt github</a>
-        <p>Le CDA est un projet universitaire durant le second semestre de L2, qui consiste à développer un jeu de Nim et de puissance 4.</p>
+        <p>Le CDA est un projet universitaire durant le second semestre de L2, qui consiste à développer un jeu de Nim et de puissance 4. J'ai réaliser ce projet avec <a href="https://kaawan-d20.github.io/">Nathan Rissot</a> et <a href="https://github.com/Tenebiscotta">Agathe Papineau</a>.</p>
+        <p>
+            C'est un projet itératif en 4 étapes :
+        </p>
+        <ol>
+            <li>Jeu de nim à deux joueur.</li>
+            <li>Jeu de puissance 4 à deux joueur.</li>
+            <li>Fusion des deux jeux avec mise en commun du code et ajout de contrainte.</li>
+            <li>Possibilité de jeu seul contre l'ordinateur.</li>
+        </ol>
+        <p>Pour chaque itération, nous avons du réalisée un diagramme de cas d'utilisation, ainsi que les scénarios associés, ainsi que les diagrammes de classe.</p>
+        <article>
+            <h3>Itération 1</h3>
+            <p>
+                Cette première itération, consiste à la réalisation d'un jeu de Nin programmée en Java.
+            </p>
+            <p>
+                Au cours de cette première itération, j'ai rédigé une Javadoc détaillée pour l'ensemble du projet, en documentant minutieusement chaque classe, méthode et paramètre afin de faciliter la compréhension et l'utilisation du code, et réalisée à l'aide des autres membres du groupes les schémas.
+            </p>
+        </article>
+        <article>
+            <h3>Itération 2</h3>
+            <p>
+                Cette deuxième itération, consiste à la réalisation d'un jeu de puissance 4.
+            </p>
+            <p>
+                Au cours de cette deuxième itération, j'ai écrit le code et la Javadoc.
+                Ce n'étais pas demander dans les consignes mais j'ai réalisée des test unitaire pour un grande partie du projet à l'aide de JUnit5.
+            </p>
+        </article>
+        <article>
+            <h3>Itération 3</h3>
+            <p>
+                Cette troisième itération, consiste à mise en commun du code des deux itération précédente.
+            </p>
+            <p>
+                Au cours de cette itération, j'ai fait la fusion des deux jeux en utilisant le design pattern "Patron de méthode". Les deux autres membres du groupe on réalisée l’intégration des contraintes. Durant cette itération, nous avons travailler avec peu de temps car nous avions des partiels.
+            </p>
+        </article>
+        <article>
+            <h3>Itération 4</h3>
+            <p>
+                Cette dernière itération, consiste à ajouter la possibilité de jouer seul contre l'ordinateur.
+            </p>
+            <p>
+                Au cours de cette itération, J'ai corriger les problèmes remonter durant la soutenance de l'itération précédente. J'ai également réalisée l’intégration de "l'IA" dans l'ensemble du code, et les deux autre membres ont fait les algorithmes des "IA".
+            </p>
+        </article>
+        <article>
+            <h3>Ajout personnel</h3>
+            <h4>Interface graphique</h4>
+            <p>Durant la dernière itération, en parallèle, j'ai fait une interface graphique simple à l'aide de JavaFX, j'ai du recoder une grande partie du projet pour fait un semblant de paterne observateur afin de faire fonctionner à la fois, le CLI, et la GUI.</p>
+            <h4>Ajout IA Mistral</h4>
+            <p>Quand j'ai vue dans la consigne qu'il fallait ajouter la possibilité de jouer contre l'ordinateur, j'ai pensée à faire fonctionner en local un LLM, j'avais choisi <a href="https://mistral.ai/fr/">mistral</a>, mais mes connaissance en IA n'étais pas assez bonne pour réussi, ce fut tout de même intéressant.</p>
+            <h4>Recodage en C++</h4>
+            <p>Durant l'été, j'ai appris que durant ma L3, j'allais faire du C++, donc j'ai suivie le cours <a href="https://openclassrooms.com/fr/courses/1894236-apprenez-a-programmer-en-c">OpenClassroom</a> sur le C++, et j'ai donc réécrit l'itération 1, 2 et 3, afin de mettre en oeuvre cette apprentissage, le code n'ai certainement pas le plus propre mais un bon projet pour commencer.</p>
+        </article>
     </main>
 </body>
 </html>
