@@ -7,36 +7,130 @@ body {
     color: white;
     font-family: var(--mono-font);
     max-width: min(round(nearest, 120ch, 5px), 90dvw);
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-items: center;
 }
 
-a {
+.container, body { 
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: 640px) {
+        max-width: 640px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 768px;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 1024px;
+    }
+
+    @media (min-width: 1280px) {
+        max-width: 1280px;
+    }
+
+    @media (min-width: 1536px) {
+        max-width: 1536px;
+    }
+}
+
+.inpage-link {
     color: rgb(85, 161, 255);
     text-decoration: underline dashed;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
-a:hover {
-    text-decoration: underline;
+h3 {
+    margin: 0;
+    padding-bottom: .4rem;
 }
 
-.nom_page_a, .lien_page{
+h1 {
+    margin: 0;
+    padding: 1rem 0 1rem 0;
+    width: fit-content;
+}
+
+.nom_page_a {
     color: white;
-    text-decoration: none;
+    text-decoration-line: none;
+    position: relative;
+    display: inline-block;
+    &:before {
+        content: "";
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background-color: white;
+        width: 0;
+        height: 1px;
+        transition-duration: 300ms;
+    }
+    &:hover:before  {
+        width: 100%;
+    }
 }
 
-.lien_page::before {content: "🔗";}
-
-.nom_page_h1, .projet_h2 {
-    margin-bottom: 0.2em;
+h1:has(.nom_page_a) {
+    padding-bottom: 2rem;
 }
 
-header, title {
+.articles-wrapper, section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 1.5rem;
+
+    & > article {
+        & > p, & > h4 {
+            padding-left: 1rem;
+            opacity: .9;
+            margin: 0;
+        }
+        & > h4 + p {
+            padding-left: 2rem;
+            opacity: .85;
+            padding-bottom: .6rem;
+        }
+        & > h4 {
+            padding-bottom: .15rem;
+        }
+    }
+}
+
+ol > li {
+    opacity: .9;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-grow: auto;
+}
+
+h2, p, ol {
+    margin: 0;
+}
+
+.header_main{
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+header {
+    flex-grow: 1;
+}
+
+.lien_page::before {content: "🔗";}
+
 
 .logo_github {
     width: 1em; /* La largeur de l'image sera 2 fois la taille de la police */
