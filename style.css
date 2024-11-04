@@ -1,47 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Mono+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root{
     --mono-font: 'Space Mono', monospace;
+    /* --content-font: "Noto Sans", sans-serif; */
+    --content-font: "Roboto", sans-serif;
+    --display-font: "Rubik Mono One", monospace;
+    --background-color: #18181b;
+    --text-color: #fafaf9;
+    --text-grey: #d6d3d1;
+    --accent-color: #38bdf8;
+    --visited-color: #9333ea;
+    --page-width: min(round(nearest, 80ch, 5px), 90dvw);
+}
+
+nav {
+    display: flex;
+    gap: 2em;
 }
 
 body {
-    background-color: black;
-    color: white;
-    font-family: var(--mono-font);
-    max-width: min(round(nearest, 120ch, 5px), 90dvw);
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    justify-items: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--content-font);
+    max-width: var(--page-width);
+    margin: auto;
 }
 
-.container, body { 
-    margin-right: auto;
-    margin-left: auto;
-    @media (min-width: 640px) {
-        max-width: 640px;
-    }
+footer {
+    margin-bottom: 4em;
+}
 
-    @media (min-width: 768px) {
-        max-width: 768px;
-    }
-
-    @media (min-width: 1024px) {
-        max-width: 1024px;
-    }
-
-    @media (min-width: 1280px) {
-        max-width: 1280px;
-    }
-
-    @media (min-width: 1536px) {
-        max-width: 1536px;
-    }
+a:visited:not(.no-visited-color) {
+    color: var(--visited-color);
 }
 
 .inpage-link {
-    color: rgb(85, 161, 255);
-    text-decoration: underline dashed;
-    &:hover {
-        text-decoration: underline;
+    color: var(--accent-color);
+    text-decoration: none;
+    text-decoration-line: none;
+    position: relative;
+    display: inline-block;
+    &:before {
+        content: "";
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background-color: var(--accent-color);
+        width: 0;
+        height: 1px;
+        transition-duration: 300ms;
+    }
+    &:hover:before  {
+        width: 100%;
     }
 }
 
@@ -52,12 +62,13 @@ h3 {
 
 h1 {
     margin: 0;
-    padding: 1rem 0 1rem 0;
+    padding: 0;
     width: fit-content;
+    font-family: var(--display-font);
 }
 
 .nom_page_a {
-    color: white;
+    color: var(--text-color);
     text-decoration-line: none;
     position: relative;
     display: inline-block;
@@ -66,7 +77,7 @@ h1 {
         bottom: 0;
         left: 0;
         position: absolute;
-        background-color: white;
+        background-color: var(--text-color);
         width: 0;
         height: 1px;
         transition-duration: 300ms;
@@ -76,42 +87,16 @@ h1 {
     }
 }
 
-h1:has(.nom_page_a) {
-    padding-bottom: 2rem;
+article:not(:first-child), section:not(:first-child) {
+    padding-top: 2em;
 }
 
-.articles-wrapper, section {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2rem;
-    gap: 1.5rem;
-
-    & > article {
-        & > p, & > h4 {
-            padding-left: 1rem;
-            opacity: .9;
-            margin: 0;
-        }
-        & > h4 + p {
-            padding-left: 2rem;
-            opacity: .85;
-            padding-bottom: .6rem;
-        }
-        & > h4 {
-            padding-bottom: .15rem;
-        }
+.detail {
+    font-family: var(--mono-font);
+    color: var(--text-grey);
+    &::before {
+        content : "→ ";
     }
-}
-
-ol > li {
-    opacity: .9;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    flex-grow: auto;
 }
 
 h2, p, ol {
@@ -127,19 +112,40 @@ h2, p, ol {
 
 header {
     flex-grow: 1;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-.lien_page::before {content: "🔗";}
+article header {
+    margin: 0;
+}
+
+.lien_page::before {
+    content: "🔗";
+    display: inline-block;
+    margin-right: 1ch;
+}
 
 
-.logo_github {
+.logo {
     width: 1em; /* La largeur de l'image sera 2 fois la taille de la police */
     height: auto; /* Maintient le ratio de l'image */
     margin-right: 0.2em;
 }
 
-.github {
+img:not(.logo) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.gallery {
     display: flex;
-    align-items:center;
-    flex-wrap: wrap;
+    width: var(--page-width);
+    gap: 1em
+}
+
+.gallery img {
+    max-width: calc(50% - .5em);
 }

@@ -7,12 +7,23 @@
     <title>Dany Dudiot - EDT Bot</title>
 </head>
 <body>
-    <header>
+    <header class="header_main">
         <h1>
-            <a href="/fr/index.html" class="nom_page_a">
+            <a href="/fr/index.html" class="nom_page_a no-visited-color">
                 Dany Dudiot
             </a>
         </h1>
+        <nav>
+            <h2>
+                <a href="/fr/projet/index.html" class="inpage-link no-visited-color">
+                    <img src="/logo/folder-alt-svgrepo-com.svg" alt="Logo Fichier" class="logo">
+                    Projets
+                </a>
+            </h2>
+            <h2>
+                <a href="http://github.com/danydudiot" class="github inpage-link"><img src="/logo/github-svgrepo-com.svg" alt="Logo Github" class="logo">Github</a>
+            </h2>
+        </nav>
     </header>
     <main>
         <h2>EDT Bot</h2>
@@ -21,55 +32,92 @@
         </p>
         <p>Eté 2024 - Projet Personnel - Python, Git</p>
         <section>
-            <p>EDT Bot est un bot discord qui permet aux étudiant de L3 d'informatique de l'université d'Orléans d’accéder à leur emploi du temps personnalisée.</p>
-            <p>
-                L'idée est partie de <a href="https://kaawan-d20.github.io/" class="inpage-link">Nathan Rissot</a> qui voulais faire un programme pour filtrer son emploi du temps et refaire un fichier ics pour l'importer dans son calendrier, quand il m'en à parler, je lui ai dit pourquoi pas en faire un bot Discord.
-            </p>
-            <p>
-                J'ai commencé  à programmer la partie Discord pendant que Nathan s'occupais du traitement des données.
-            </p>
-            <p>
-                Pour la partie discord, j'ai dû  apprend comment faire un bot discord, j'ai donc utilisé <a href="https://interactions-py.github.io/" class="inpage-link">interaction.py</a> qui est plutôt facile d'utilisation avec ses nombreux guides.
-                J'ai commencé par crée des commandes simples tel que `/today`, `/week` afin d'obtenir l'EDT du jour / semaine.
-            </p>
-            <img src="../../img/EDTBot/Date.png" alt="Image d'un jour">
-            <p>
-                Ensuite, nous avons voulu faire fonctionner les commandes en MP (message privée) mais les groupes sont stocker sous forme de rôle donc nous avons dû  ajouter une base de données afin de faire fonctionner les commandes en MP.
-            </p>
-            <p>
-                Par la suite, nous avons ajouté à un système d'abonnement où l'utilisateur recevrais son emploi du temps automatiquement le matin en MP.
-            </p>
-            <img src="../../img/EDTBot/Check_sub.png" alt="Image d'un check_subscription">
-            <p>
-                Durant ma L2, nous avons déjà eu des changements de cours la veille pour le lendemain, donc nous avons implémenté un détecteur de changements de cours, qui détecte quand un cours a été modifier, ajouté ou supprimée et donc nous le notifier.
-            </p>
-            <img src="../../img/EDTBot/Changement.png" alt="Image d'un check_subscription">
-            <p>
-                Nous avons aussi ajouté un système pour la gestion des exams, qui étais un début mais peut abouti nous nous étions dit que nous verrons comment faire le moment venu.
-            </p>
-            <p>
-                J'ai créé un système pour que les utilisateurs puissent facilement obtenir leurs rôles, en leur proposant uniquement les options compatibles avec les choix précédent.
-            </p>
-            <p>
-                C'est à ce moment que le problème de l'hébergement est arrivé, aucun de nous deux ayant un serveur, j'ai suggéré l'idée de le faire tourner sur un ancien téléphone car python peut tourner dessus, c'est à ce moment-là qu'un ami se propose de l’héberger, donc nous avons l’hébergement.
-            </p>
-            <p>
-                A ce moment, une fois déployer nous pouvons tester toutes les fonctionnalités et nous découvrons de nombreux bug que nous corrigeons.
-            </p>
-            <p>
-                Puis vient le moment de la rentrée, tout fonctionne correctement, les utilisateurs sont satisfaits, nous font des retours que nous prenons en compte. Mais comme nous le craignons, l'université décide de changer le format des ics, ce qui nous obligent à faire un correctif en urgence afin de rétablir le bot.
-            </p>
-            <p>
-                Les premiers examens commencent à arriver et nous décidons d'utiliser un fichier d'argument qui nous permet, de signaler des événements comme des examens, d'ajouter, supprimer, modifier des cours en fonction des informations des enseignants, ainsi que désactiver des fonctionnalités durant les vacances.
-            </p>
-            <img src="../../img/EDTBot/exam.png" alt="Image d'un examens">
+            <article>
+                <p>EDT Bot est un bot discord qui permet aux étudiant de L3 d'informatique de l'université d'Orléans d’accéder à leur emploi du temps personnalisée.</p>
+            </article>
+            <article>
+                <p>
+                    Tout part du système d'emploi du temps de l'université qui est horrible, il est lent, bug, il faut 2 mois pour avoir notre emploi du temps personnalisée.
+                </p>
+                <img src="../../img/EDTBot/EDTFAC.png" alt="Image du système d'emploi du temps de l'université">
+
+                <p>
+                    C'est <a href="https://kaawan-d20.github.io/" class="inpage-link">Nathan Rissot</a> qui à eu l'idée de faire un programme pour filtrer son emploi du temps et refaire un fichier ics pour l'importer dans son calendrier.
+                    Quand il m'en à parler, je lui ai dit pourquoi pas en faire un bot Discord, j'ai commencé à programmer la partie Discord pendant que Nathan s'occupais du traitement des données.
+                </p>
+            </article>
+            <article>
+                <p>
+                    Pour la partie discord, j'ai dû  apprend comment faire un bot discord, j'ai donc utilisé <a href="https://interactions-py.github.io/" class="inpage-link">interaction.py</a> qui est plutôt facile d'utilisation avec ses nombreux guides.
+                    J'ai commencé par crée des commandes simples tel que `/today`, `/week` afin d'obtenir l'EDT du jour / semaine.
+                </p>
+                <img src="../../img/EDTBot/Date.png" alt="Image d'un jour">
+            </article>
+            <article>
+                <p>
+                    Ensuite, nous avons voulu faire fonctionner les commandes en MP (message privée) mais les groupes sont stocker sous forme de rôle donc nous avons dû  ajouter une base de données afin de faire fonctionner les commandes en MP.
+                </p>
+            </article>
+            <article>
+                <p>
+                    Par la suite, nous avons ajouté à un système d'abonnement où l'utilisateur recevrais son emploi du temps automatiquement le matin en MP.
+                </p>
+                <img src="../../img/EDTBot/Check_sub.png" alt="Image d'un check_subscription">
+            </article>
+            <article>
+                <p>
+                    Durant ma L2, nous avons déjà eu des changements de cours la veille pour le lendemain, donc nous avons implémenté un détecteur de changements de cours, qui détecte quand un cours a été modifier, ajouté ou supprimée et donc nous le notifier.
+                </p>
+                <img src="../../img/EDTBot/Changement.png" alt="Image d'un check_subscription">
+            </article>
+            <article>
+                <p>
+                    Nous avons aussi ajouté un système pour la gestion des exams, qui étais un début mais peut abouti nous nous étions dit que nous verrons comment faire le moment venu.
+                </p>
+            </article>
+            <article>
+                <p>
+                    J'ai créé un système pour que les utilisateurs puissent facilement obtenir leurs rôles, en leur proposant uniquement les options compatibles avec les choix précédent.
+                </p>
+                <div class="gallery">
+                    <img src="../../img/EDTBot/GroupeOK.png" alt="Image qui demande si les groupes déjà défini sont bon">
+                    <img src="../../img/EDTBot/AskFiliere.png" alt="Image qui demande la filière">
+                </div>
+                <div class="gallery">
+                    <img src="../../img/EDTBot/AskTD.png" alt="Image qui demande le TD">
+                    <img src="../../img/EDTBot/AskTP.png" alt="Image qui demande le TP">
+                </div>
+            </article>
+            <article>
+                <p>
+                    C'est à ce moment que le problème de l'hébergement est arrivé, aucun de nous deux ayant un serveur, j'ai suggéré l'idée de le faire tourner sur un ancien téléphone car python peut tourner dessus, c'est à ce moment-là qu'un ami se propose de l’héberger, donc nous avons l’hébergement.
+                </p>
+                <p>
+                    A ce moment, une fois déployer nous pouvons tester toutes les fonctionnalités et nous découvrons de nombreux bug que nous corrigeons.
+                </p>
+            </article>
+            <article>
+                <p>
+                    Puis vient le moment de la rentrée, tout fonctionne correctement, les utilisateurs sont satisfaits, nous font des retours que nous prenons en compte. Mais comme nous le craignons, l'université décide de changer le format des ics, ce qui nous obligent à faire un correctif en urgence afin de rétablir le bot.
+                </p>
+            </article>
+            <article>
+                <p>
+                    Les premiers examens commencent à arriver et nous décidons d'utiliser un fichier d'argument qui nous permet, de signaler des événements comme des examens, d'ajouter, supprimer, modifier des cours en fonction des informations des enseignants, ainsi que désactiver des fonctionnalités durant les vacances.
+                </p>
+                <img src="../../img/EDTBot/exam.png" alt="Image d'un examens">
+            </article>
         
-            <p>
-                A deux reprises, d'autres étudiant se sont plein que des cours se chevauchais, nous avons donc décider d'ajouter un détecteur de chevauchement, pour remonter les informations à l'administration.
-            </p>
-            <p>
-                A la rentrée, nous avons fait une présentation du bot et du serveur discord pour l'année, les professeurs ont appréciés notre idée et nous ont féliciter.
-            </p>
+            <article>
+                <p>
+                    A deux reprises, d'autres étudiant se sont plein que des cours se chevauchais, nous avons donc décider d'ajouter un détecteur de chevauchement, pour remonter les informations à l'administration.
+                </p>
+            </article>
+            <article>
+                <p>
+                    A la rentrée, nous avons fait une présentation du bot et du serveur discord pour l'année, les professeurs ont appréciés notre idée et nous ont féliciter.
+                </p>
+            </article>
             <img src="../../img/EDTBot/help.png" alt="Image d'un help">
         </section>
     </main>
