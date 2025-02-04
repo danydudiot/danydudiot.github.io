@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Dany Dudiot - CDA</title>
+</head>
+<body>
+    <header class="header_main">
+        <h1>
+            <a href="/fr/index.html" class="nom_page_a no-visited-color">
+                Dany Dudiot
+            </a>
+        </h1>
+        <nav>
+            <h2>
+                <a href="/fr/projet/index.html" class="inpage-link no-visited-color">
+                    <img src="/logo/folder-alt-svgrepo-com.svg" alt="Logo Fichier" class="logo">
+                    Projets
+                </a>
+            </h2>
+            <h2>
+                <a href="http://github.com/danydudiot" class="github inpage-link"><img src="/logo/github-svgrepo-com.svg" alt="Logo Github" class="logo">GitHub</a>
+            </h2>
+        </nav>
+    </header>
+    <main>
+        <h2>Javaclysm</h2>
+        <p>
+            <a href="https://github.com/danydudiot/javaclysm" class="inpage-link">Dépôt GitHub</a>
+            <p>Hiver 2024 - Projet universitaire, Java, Git</p>
+        </p>
+        <p>
+            Javaclysm est un projet universitaire durant le premier semestre de L3, qui consiste à développer un jeu ressemblant à <a class="inpage-link" href="https://cataclysmdda.org/">Cataclysm: Dark Days Ahead</a>. 
+            Le but de ce projet étais de mettre en oeuvre des designs patterns. 
+            J'ai réalisé ce projet avec <a href="https://kaawan-d20.github.io/" class="inpage-link">Nathan Rissot</a> 
+            et <a href="https://github.com/Tenebiscotta" class="inpage-link">Agathe Papineau</a>.
+        </p>
+        
+        <section>
+            <article>
+                <p>
+                    C'est un projet itératif en 2 étapes :
+                </p>
+                <ol>
+                    <li>Base du jeu.</li>
+                    <li>Ajout de prédateur, et de pierre temporelle.</li>
+                </ol>
+            </article>
+            <article>
+                <h3>Itération 1</h3>
+                <p>
+                    Cette première itération, consiste à la réalisation de la base du jeu donc toutes les actions du joueur, les animaux et leurs états, la génération / parsage de la carte.
+                    Cette itération n'étais pas parfaite donc nous avions plusieurs projet en même temps.
+                </p>
+                <p>
+                    Nous avons utiliser une architecture MVC, ainsi que de nombreux designs patterns.
+                </p>
+                <ul>
+                    <li>
+                        Le pattern Etat pour gérer le comportement des NPC.
+                    </li>
+                    <li>
+                        Le pattern Observateur pour gérer la relation entre l'Horloge et les NPC qui décident de leur prochaine action au passage de celle ci.
+                    </li>
+                    <li>
+                        Le pattern Fabrique Abstraite pour l'instanciation de l'Objet Board représentant le plateau de jeu.
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>Itération 2</h3>
+                <p>
+                    Cette deuxième itération, à l'ajout des prédateurs et des pierre temporelle.
+                </p>
+                <p>
+                    Nous avons ajouter le pattern Singleton pour simplifier l'accès à la Board, la Clock, et l'Inventory et aussi pour qu'il y ait une seule instance. Et le pattern Commande, afin de pouvoir annuler des actions et revenir dans le passée.
+                </p>
+            </article>
+            <img src="../../img/Javaclysm/Javaclysm.png" alt="Image du jeu">
+        </section>
+    </main>
+</body>
+</html>
