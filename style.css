@@ -126,6 +126,11 @@ article header {
     margin-right: 1ch;
 }
 
+.lien_page {
+    color: var(--accent-color);
+    text-decoration-line: none;
+}
+
 
 .logo {
     width: 1em; /* La largeur de l'image sera 2 fois la taille de la police */
