@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Dany Dudiot - EDT Bot</title>
+</head>
+
+<body>
+    <header class="header_main">
+        <h1>
+            <a href="/fr/index.html" class="nom_page_a no-visited-color">
+                Dany Dudiot
+            </a>
+        </h1>
+        <nav>
+            <h2>
+                <a href="/fr/projet/index.html" class="inpage-link no-visited-color">
+                    <img src="/logo/folder-alt-svgrepo-com.svg" alt="Logo Fichier" class="logo">
+                    Projets
+                </a>
+            </h2>
+            <h2>
+                <a href="http://github.com/danydudiot" class="github inpage-link"><img
+                        src="/logo/github-svgrepo-com.svg" alt="Logo Github" class="logo">GitHub</a>
+            </h2>
+        </nav>
+    </header>
+    <main>
+        <h2>EDT Bot V2</h2>
+        <!-- <p>
+            <a href="https://github.com/TrainWreckOrg/trainwreck" class="inpage-link">Dépôt GitHub</a>
+        </p> -->
+        <p>Eté 2025 - Projet Personnel - Python (FastAPI, SQLModel), React TS, Git, Docker</p>
+        <section>
+            <article>
+                <p>EDT Bot est un service qui permet aux étudiants d'informatique de l'université d'Orléans
+                    d’accéder à leur emploi du temps personnalisé.</p>
+            </article>
+            <article>
+                <h3>
+                    Première version.
+                </h3>
+                <p>Vous pouvez retrouver la premier version d'EDT Bot <a class="inpage-link"
+                        href="/fr/projet/edtbotV1.html">ici</a></p>
+                <p></p>
+            </article>
+            <article>
+                <h3>
+                    Pourquoi une nouvelle version.
+                </h3>
+                <p>
+                    La première version n'étais pas bien pensée, car elle à évoluée de nombreuse fois. A la fin, l'ajout
+                    de nouvelle fonctionnalité devenais impossible car il provoquait des bugs.
+                </p>
+                <p>Par exemple, les L2 nous avais demander de leurs faire la même chose, mais ajoute une distinction
+                    L2/L3 étais impossible à moins de récrire l'intégralité du code.</p>
+            </article>
+
+            <article>
+                <h3>
+                    L'architecture.
+                </h3>
+                <p>
+                    Pour cette nouvelle version, on avons crée 3 partie :
+                </p>
+                <ul>
+                    <li>Une API</li>
+                    <li>Un site web</li>
+                    <li>Le bot discord</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>API</h3>
+                <p>L'API est codé en Python, avec FastAPI pour facilité la mise en place de l'API, elle utilise
+                    également SQLModel, un ORM basé sur SQLAlchemy qui est développer par la même personne ce qui
+                    facilite l'interaction entre les deux.</p>
+
+                <p>Dans cette version, nous avons pris en compte les problèmes de l'ancienne version, les cours sont
+                    désormais associé à un ou plusieurs Tag (Domaine, Année, Filière, Groupe). De plus, j'ai crée un
+                    système de parseur global qui permet de mutualisée certaines partie et de spécialiser en fonction de
+                    chaque parseur.</p>
+                <p>
+                    Maintenant, il est beaucoup plus facile, d'ajouter un nouveau calendrier, il suffit juste d'ajouter
+                    les Tags et crée un parseur spécifique qui indique comment attribuer les tags.
+                </p>
+                <p>
+                    Nous avons conserver une grande partie des fonctionnalité d'origine, comme le signalement de
+                    changement, d'examen. Nous avons également ajout un système de compte afin de facilement pouvoir
+                    donner des accès à d'autre personne avec une gestion d'email afin de pouvoir confirmer la création
+                    d'un compte, réinitialiser un mot de passe.
+                </p>
+            </article>
+
+            <article>
+                <h3>Site web</h3>
+                <p><a class="inpage-link" href="http://edtbot.fr">Le lien du site</a></p>
+                <p>
+                    Nous avons comme projet de crée un site web afin de rendre plus accessible notre service dans devoir
+                    passer par discord.
+                </p>
+                <p>
+                    J'ai demander de l'aide à des amis, qui ont l'habitude de faire du développement web, et ils ont dit
+                    d'utiliser React, j'ai donc rapidement apprit cette nouvelle technologie à l'aide des vidéo de <a
+                        class="inpage-link" href="https://grafikart.fr/formations/react">Grafikart</a>.
+                </p>
+                <p>Nous avons donc commencer à faire le site, les partie les plus difficile ont été le calendrier que
+                    nous avons fait à la main sans aide de libraire, et la partie pour sélectionner son groupe.</p>
+
+                <p>
+                    Pour le calendrier, nous avons une gestion automatique de l'affichage des jours, par défaut du lundi
+                    au vendredi et s'il y a des cours le samedi et dimanche, les colonnes s'ajoute automatiquement, de
+                    même pour les heures.
+                </p>
+                <p>
+                    Il y a aussi la possibilité d'afficher plusieurs cours en même temps, ainsi que des événements sur
+                    plusieurs jour.
+                </p>
+                <p>
+                    <img src="/img/EDTBot2/EDTBotWeb.png" alt="Capture d'écran du site">
+                </p>
+
+            </article>
+            <article>
+                <h3>Bot discord</h3>
+                <p>Le nouveau bot discord reprend, la quasi totalité des fonctionnalité déjà existante, tel que l'envoi automatique des emplois du temps, et les notification de changement de cours</p>
+
+                <p>
+                    Pour l'envoi automatique, nous l'avons améliorer, afin de permettre aux utilisateur de choisir l'heure d'envoi, ainsi que s'il le veulent le jour même ou la veille.
+                </p>
+                <p>
+                    Pour les notifications de changement de cours, le système à du complètement changer car avant l'ensemble du projet étais directement connecté, mais maintenant, le bot est connecter via un websocket de l'api qui le préviens quand l'api à trouver des changements, puis il récupérer les informations 
+                </p>
+                <p>
+                    <img src="/img/EDTBot2/Discord.png" alt="Capture d'écran de l'edt de la semaine sur discord">
+                </p>
+
+            </article>
+            <article>
+                <h3>La carte</h3>
+                <p>
+                    Durant la réalisation du site web, je me suis rendu compte que j'avais toutes les informations pour crée une carte afin d'aider les nouveaux à plus facilement se repérer. J'ai donc légèrement modifier l'api pour ajouter la position des salles. Je n'avais plus qu'à crée une page avec la carte.
+                </p>
+                <p>
+                    <img src="/img/EDTBot2/Carte.png" alt="Capture d'écran de la carte">
+                </p>
+            </article>
+            <article>
+                <h3>La version enseignant</h3>
+                <p>
+                    Après le lancement à la rentrée, durant le mois d'octobre, quelque enseignant commence à montrer de l’intérêt pour une version enseignant, grâce à l'architecture facilement modulable, j'ai rajouter un rôle pour les comptes, deux endpoints, et une nouvelle page, et les enseignant avais accès à leur emplois du temps.
+                </p>
+            </article>
+            <article>
+                <h3>Le système de secoure</h3>
+                <p>
+                    Durant ma licence, il arrivais que le service d'emplois du temps de l'université ne fonctionne pas, mais grâce à ce projet, l'emplois du temps reste accessible même quand celui de l'université ne fonctionne pas ce qui aide les étudiants et les enseignants.
+                </p>
+            </article>
+
+        </section>
+    </main>
+</body>
+
+</html>
